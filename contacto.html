@@ -1,454 +1,418 @@
-```html
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contactate con la UEGP N.º 172 Deolindo Bittel. Consultá nuestras carreras, cursos y propuestas educativas.">
+    <meta name="description" content="Contactate con la UEGP N.º 172 Deolindo Bittel. Conocé nuestras propuestas educativas.">
+
     <title>Contacto | UEGP N.º 172 Deolindo Bittel</title>
 
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        .contacto-pagina {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 55px 24px 70px;
+        /* CONFIGURACIÓN GENERAL */
+
+        * {
+            box-sizing: border-box;
         }
+
+        html {
+            width: 100%;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+
+        
+body {
+    width: 100%;
+    margin: 0;
+    background-color: #f5f8fc;
+    color: #24364b;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Fotografía educativa difuminada de fondo */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.75),
+            rgba(255, 255, 255, 0.82)
+        ),
+        url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1920&q=85");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(2px);
+    transform: scale(1.03);
+    pointer-events: none;
+}
+
+
+        /* CONTENEDOR PRINCIPAL */
+
+        .contacto-pagina {
+            position: relative;
+            isolation: isolate;
+            width: 100%;
+            max-width: 1180px;
+            min-height: 100vh;
+            margin: 0 auto;
+            padding: 35px 24px 40px;
+            animation: contactoEntrada .7s ease both;
+        }
+
+        /* FONDO DECORATIVO */
+
+        .contacto-pagina::before,
+        .contacto-pagina::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .contacto-pagina::before {
+            width: 280px;
+            height: 280px;
+            top: 20px;
+            left: -110px;
+            background: radial-gradient(
+                circle,
+                rgba(51, 112, 177, .12),
+                transparent 70%
+            );
+            animation: contactoFlotar 8s ease-in-out infinite;
+        }
+
+        .contacto-pagina::after {
+            width: 300px;
+            height: 300px;
+            right: -100px;
+            bottom: 80px;
+            background: radial-gradient(
+                circle,
+                rgba(98, 151, 204, .12),
+                transparent 70%
+            );
+            animation: contactoFlotar 10s ease-in-out infinite reverse;
+        }
+
+        /* ENCABEZADO */
 
         .contacto-encabezado {
             text-align: center;
             margin-bottom: 35px;
+            animation: contactoSubir .7s ease both;
         }
 
         .contacto-encabezado h1 {
             font-family: 'Anton', sans-serif;
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
-            margin-bottom: 15px;
+            color: #123c69;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            line-height: 1.15;
+            margin: 0 0 15px;
         }
 
         .contacto-encabezado p {
             max-width: 700px;
             margin: 0 auto;
+            color: #586779;
             line-height: 1.7;
         }
 
+        /* DISTRIBUCIÓN DE LOS PANELES */
+
         .contacto-contenedor {
             display: grid;
-            grid-template-columns: 0.85fr 1.15fr;
-            gap: 30px;
+            grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr);
+            gap: 20px;
             align-items: start;
+            width: 100%;
         }
+
+        /* PANEL AZUL Y FORMULARIO */
 
         .contacto-info,
         .contacto-formulario {
-            padding: 30px;
-            border-radius: 18px;
-            background: #fff;
-            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+            position: relative;
+            min-width: 0;
+            padding: 28px;
+            border: 1px solid rgba(255, 255, 255, .8);
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(20, 49, 82, .10);
+            transition: transform .3s ease, box-shadow .3s ease;
         }
 
         .contacto-info {
-            background: #123c69;
-            color: #fff;
+            overflow: hidden;
+            background: linear-gradient(
+                145deg,
+                #194d7f,
+                #123c69 60%,
+                #0c2e51
+            );
+            color: #ffffff;
+            box-shadow: 0 18px 38px rgba(18, 60, 105, .20);
         }
 
-        .contacto-info h2,
-        .contacto-formulario h2 {
-            margin-top: 0;
-            margin-bottom: 18px;
+        .contacto-info::before {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            top: -100px;
+            right: -90px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, .14);
+            box-shadow:
+                0 0 0 22px rgba(255, 255, 255, .035),
+                0 0 0 45px rgba(255, 255, 255, .025);
+            pointer-events: none;
+        }
+
+        .contacto-formulario {
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        .contacto-formulario::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            border-radius: 20px 20px 0 0;
+            background: linear-gradient(
+                90deg,
+                #123c69,
+                #6ca6db,
+                #123c69
+            );
+        }
+
+        .contacto-info h2 {
+            position: relative;
+            margin: 0 0 18px;
+            padding-bottom: 14px;
+            line-height: 1.35;
+        }
+
+        .contacto-info h2::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 48px;
+            height: 3px;
+            border-radius: 10px;
+            background: #76aee3;
         }
 
         .contacto-info p {
+            position: relative;
             line-height: 1.8;
         }
 
         .contacto-nota {
+            position: relative;
             margin-top: 25px;
             padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.3);
-            font-size: 0.95rem;
+            border-top: 1px solid rgba(255, 255, 255, .3);
+            font-size: .95rem;
+            line-height: 1.7;
         }
 
-        .campo-contacto {
-            margin-bottom: 18px;
+        .contacto-info:hover,
+        .contacto-formulario:hover {
+            box-shadow: 0 18px 38px rgba(20, 49, 82, .13);
         }
 
-        .campo-contacto label {
+        /* GOOGLE FORMS */
+
+        .formulario-google {
             display: block;
-            margin-bottom: 7px;
-            font-weight: 600;
-        }
-
-        .campo-contacto input,
-        .campo-contacto select,
-        .campo-contacto textarea {
             width: 100%;
-            box-sizing: border-box;
-            padding: 12px 14px;
-            border: 1px solid #d2d8e0;
-            border-radius: 9px;
-            font: inherit;
-            background: #fff;
-            color: #222;
+            min-width: 0;
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
         }
 
-        .campo-contacto input:focus,
-        .campo-contacto select:focus,
-        .campo-contacto textarea:focus {
-            outline: 2px solid #3977b9;
-            outline-offset: 1px;
-        }
-
-        .campo-contacto textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .contacto-boton {
+        .formulario-google iframe {
+            display: block;
             width: 100%;
-            padding: 14px 20px;
-            border: none;
-            border-radius: 9px;
-            background: #123c69;
-            color: #fff;
-            font: inherit;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.2s ease, transform 0.2s ease;
+            max-width: 100%;
+            height: 1100px;
+            border: 0;
+            margin: 0;
+            background: #ffffff;
         }
 
-        .contacto-boton:hover {
-            background: #20558d;
-            transform: translateY(-2px);
-        }
+        /* BOTÓN VOLVER */
 
         .contacto-volver {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            max-width: 100%;
             margin-top: 25px;
+            padding: 12px 20px;
+            border: 1px solid rgba(18, 60, 105, .13);
+            border-radius: 12px;
+            background: #ffffff;
             color: #123c69;
             font-weight: 600;
             text-decoration: none;
+            box-shadow: 0 5px 15px rgba(20, 49, 82, .07);
+            transition: transform .25s ease, box-shadow .25s ease;
         }
 
         .contacto-volver:hover {
-            text-decoration: underline;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 22px rgba(20, 49, 82, .12);
         }
+
+        /* ANIMACIONES */
+
+        @keyframes contactoEntrada {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes contactoSubir {
+            from {
+                opacity: 0;
+                transform: translateY(14px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes contactoFlotar {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-14px); }
+        }
+
+        /* TABLETS Y CELULARES */
 
         @media (max-width: 760px) {
             .contacto-pagina {
-                padding: 35px 16px 50px;
+                width: 100%;
+                max-width: 100%;
+                padding: 18px 10px 30px;
+            }
+
+            .contacto-encabezado {
+                margin-bottom: 22px;
+                padding: 0 4px;
+            }
+
+            .contacto-encabezado h1 {
+                font-size: clamp(2rem, 8vw, 2.6rem);
+            }
+
+            .contacto-encabezado p {
+                font-size: .95rem;
+                line-height: 1.6;
             }
 
             .contacto-contenedor {
-                grid-template-columns: 1fr;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 16px;
             }
 
             .contacto-info,
             .contacto-formulario {
-                padding: 23px;
+                width: 100%;
+                max-width: 100%;
+                min-width: 0;
+                margin: 0;
+                padding: 18px 12px;
+                border-radius: 14px;
+            }
+
+            .contacto-info h2 {
+                font-size: 1.3rem;
+            }
+
+            .contacto-info p {
+                font-size: .94rem;
+            }
+
+            .contacto-info:hover,
+            .contacto-formulario:hover {
+                transform: none;
+            }
+
+            .formulario-google {
+                width: 100%;
+                min-width: 0;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+
+            .formulario-google iframe {
+                display: block;
+                width: 100%;
+                max-width: 100%;
+                height: 1500px;
+                margin: 0;
+                border: 0;
+            }
+
+            .contacto-volver {
+                margin-top: 20px;
+                padding: 12px 15px;
+                font-size: .93rem;
             }
         }
-        
-.formulario-google {
-    width: 100%;
-    overflow: hidden;
-}
 
-.formulario-google iframe {
-    display: block;
-    width: 100%;
-    min-height: 1500px;
-    border: none;
-    background: #fff;
-}
+        /* CELULARES PEQUEÑOS */
 
-@media (max-width: 760px) {
-    .formulario-google iframe {
-        min-height: 1800px;
-    }
-}
+        @media (max-width: 380px) {
+            .contacto-pagina {
+                padding-right: 8px;
+                padding-left: 8px;
+            }
 
-/* ========================================
-   DISEÑO MODERNO - PÁGINA DE CONTACTO
-   ======================================== */
+            .contacto-info,
+            .contacto-formulario {
+                padding: 14px 8px;
+            }
+        }
 
-.contacto-pagina {
-    position: relative;
-    isolation: isolate;
-    max-width: 1180px;
-    padding-top: 65px;
-    padding-bottom: 80px;
-    animation: contactoEntrada 0.8s ease both;
-}
+        /* ACCESIBILIDAD */
 
-/* Fondo decorativo */
-.contacto-pagina::before,
-.contacto-pagina::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    border-radius: 50%;
-    pointer-events: none;
-    filter: blur(2px);
-}
+        @media (prefers-reduced-motion: reduce) {
+            .contacto-pagina,
+            .contacto-encabezado,
+            .contacto-pagina::before,
+            .contacto-pagina::after {
+                animation: none;
+            }
 
-.contacto-pagina::before {
-    width: 280px;
-    height: 280px;
-    top: 20px;
-    left: -110px;
-    background: radial-gradient(
-        circle,
-        rgba(51, 112, 177, 0.13),
-        transparent 70%
-    );
-    animation: contactoFlotar 8s ease-in-out infinite;
-}
-
-.contacto-pagina::after {
-    width: 350px;
-    height: 350px;
-    right: -130px;
-    bottom: 80px;
-    background: radial-gradient(
-        circle,
-        rgba(98, 151, 204, 0.15),
-        transparent 70%
-    );
-    animation: contactoFlotar 10s ease-in-out infinite reverse;
-}
-
-/* Título principal */
-.contacto-encabezado {
-    margin-bottom: 42px;
-    animation: contactoSubir 0.8s ease both;
-}
-
-.contacto-encabezado h1 {
-    color: #123c69;
-    letter-spacing: 1px;
-    text-shadow: 0 4px 16px rgba(18, 60, 105, 0.10);
-}
-
-.contacto-encabezado p {
-    color: #586779;
-    font-size: 1.05rem;
-}
-
-/* Paneles */
-.contacto-contenedor {
-    gap: 28px;
-    perspective: 1200px;
-}
-
-.contacto-info,
-.contacto-formulario {
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 22px;
-    box-shadow:
-        0 12px 30px rgba(20, 49, 82, 0.08),
-        0 3px 8px rgba(20, 49, 82, 0.04);
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        border-color 0.35s ease;
-}
-
-.contacto-info {
-    background: linear-gradient(
-        145deg,
-        #194d7f 0%,
-        #123c69 55%,
-        #0c2e51 100%
-    );
-    box-shadow:
-        0 18px 38px rgba(18, 60, 105, 0.22),
-        inset 0 1px 0 rgba(255, 255, 255, 0.16);
-}
-
-.contacto-info::before {
-    content: "";
-    position: absolute;
-    width: 220px;
-    height: 220px;
-    top: -100px;
-    right: -90px;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    box-shadow:
-        0 0 0 22px rgba(255, 255, 255, 0.035),
-        0 0 0 45px rgba(255, 255, 255, 0.025);
-    pointer-events: none;
-}
-
-.contacto-formulario {
-    background: linear-gradient(150deg, #ffffff, #fbfdff);
-}
-
-.contacto-formulario::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, #123c69, #6ca6db, #123c69);
-}
-
-.contacto-info:hover,
-.contacto-formulario:hover {
-    transform: translateY(-5px);
-    box-shadow:
-        0 22px 45px rgba(20, 49, 82, 0.13),
-        0 6px 14px rgba(20, 49, 82, 0.06);
-}
-
-/* Títulos de los paneles */
-.contacto-info h2,
-.contacto-formulario h2 {
-    position: relative;
-    padding-bottom: 14px;
-}
-
-.contacto-info h2::after,
-.contacto-formulario h2::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 48px;
-    height: 3px;
-    border-radius: 10px;
-    background: #76aee3;
-    transition: width 0.3s ease;
-}
-
-.contacto-info:hover h2::after,
-.contacto-formulario:hover h2::after {
-    width: 85px;
-}
-
-/* Espacio del formulario de Google */
-.formulario-google {
-    margin-top: 22px;
-    border-radius: 14px;
-    overflow: hidden;
-    background: #fff;
-    box-shadow:
-        0 5px 18px rgba(20, 49, 82, 0.07),
-        inset 0 0 0 1px rgba(18, 60, 105, 0.07);
-}
-
-.formulario-google iframe {
-    border-radius: 14px;
-}
-
-/* Botón para volver */
-.contacto-volver {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 30px;
-    padding: 12px 20px;
-    border: 1px solid rgba(18, 60, 105, 0.13);
-    border-radius: 12px;
-    background: #fff;
-    box-shadow: 0 5px 15px rgba(20, 49, 82, 0.07);
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        background 0.25s ease;
-}
-
-.contacto-volver:hover {
-    transform: translateY(-3px);
-    background: #f1f7fd;
-    box-shadow: 0 10px 22px rgba(20, 49, 82, 0.12);
-}
-
-/* Animaciones */
-@keyframes contactoEntrada {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes contactoSubir {
-    from {
-        opacity: 0;
-        transform: translateY(18px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes contactoFlotar {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-18px);
-    }
-}
-
-/* Adaptación a celulares */
-@media (max-width: 760px) {
-    .contacto-pagina {
-        padding: 38px 16px 55px;
-    }
-
-    .contacto-encabezado {
-        margin-bottom: 28px;
-    }
-
-    .contacto-contenedor {
-        gap: 22px;
-    }
-
-    .contacto-info,
-    .contacto-formulario {
-        border-radius: 18px;
-        padding: 23px;
-    }
-
-    .contacto-info:hover,
-    .contacto-formulario:hover {
-        transform: none;
-    }
-
-    .contacto-pagina::before {
-        left: -180px;
-    }
-
-    .contacto-pagina::after {
-        right: -200px;
-    }
-}
-
-/* Respeto por la preferencia de reducir movimiento */
-@media (prefers-reduced-motion: reduce) {
-    .contacto-pagina,
-    .contacto-encabezado,
-    .contacto-pagina::before,
-    .contacto-pagina::after {
-        animation: none;
-    }
-
-    .contacto-info,
-    .contacto-formulario,
-    .contacto-volver {
-        transition: none;
-    }
-}
-
+            .contacto-info,
+            .contacto-formulario,
+            .contacto-volver {
+                transition: none;
+            }
+        }
     </style>
 </head>
 
@@ -459,8 +423,9 @@
         <header class="contacto-encabezado">
             <h1>Contactanos</h1>
             <p>
-                ¿Querés conocer nuestras carreras, cursos o propuestas educativas?
-                Completá el formulario y dejanos tu consulta.
+                ¿Tienes alguna pregunta? Queremos escucharte, 
+                completá el formulario y nos comunicamos con vos!
+                
             </p>
         </header>
 
@@ -470,16 +435,7 @@
                 <h2>Estamos para ayudarte</h2>
 
                 <p>
-                    <strong>Asociación Civil Prof. Gustavo Martínez Campos</strong>
-                </p>
-
-                <p>
-                    UEGP N.º 172 “Deolindo Bittel”
-                </p>
-
-                <p>
-                    Consultanos por nuestras propuestas educativas,
-                    requisitos de inscripción y modalidades de cursado.
+                    Consultanos por requisitos de inscripción y modalidades de cursado.
                 </p>
 
                 <div class="contacto-nota">
@@ -487,39 +443,27 @@
                     conocer tu consulta y orientarte.
                 </div>
             </section>
-            
-<section class="contacto-formulario">
 
-    <div class="formulario-google">
-        <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSeUet9oeX67xJj553k7vwyE5C3LjOwq-Vo3p9jtYIDf2HUhmw/viewform?embedded=true"
-            title="Declaración de Interés Académico"
-            width="100%"
-            height="1500"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0">
-            Cargando…
-        </iframe>
-    </div>
-</section>
-<a href="index.html" class="contacto-volver">
-            ← Volver a la página principal
-        </a>
+            <section class="contacto-formulario">
+                <div class="formulario-google">
+                    <iframe
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSeUet9oeX67xJj553k7vwyE5C3LjOwq-Vo3p9jtYIDf2HUhmw/viewform?embedded=true"
+                        title="Declaración de Interés Académico"
+                        width="100%"
+                        height="1500"
+                        loading="lazy">
+                        Cargando…
+                    </iframe>
+                </div>
+            </section>
 
         </div>
 
+        <a href="index.html" class="contacto-volver">
+            ← Volver a la página principal
+        </a>
+
     </main>
-
-    <script>
-        document.getElementById("formularioContacto").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            document.getElementById("estadoFormulario").textContent =
-                "El formulario está diseñado, pero todavía debemos conectarlo para recibir las respuestas. Tus datos no se enviaron.";
-        });
-    </script>
 
 </body>
 </html>
-```
