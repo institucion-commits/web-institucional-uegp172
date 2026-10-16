@@ -17,6 +17,7 @@
     <!-- Estilos existentes y nuevos estilos de portada -->
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/portada.css">
+    <link rel="stylesheet" href="CSS/header.css">
 </head>
 
 <body>
@@ -26,31 +27,21 @@
     <!-- ENCABEZADO Y PORTADA -->
     <section class="panel-izquierdo">
 
-        <header class="header">
-
-            <a class="marca" href="index.html">
-                <img
-                    src="ASSETS/img/logo-institucional.png"
-                    alt="Logo de la Asociación Civil Prof. Gustavo Martínez Campos"
-                    class="logo-institucional"
-                >
-
-                <div class="marca-texto">
-                    <strong>Asoc. Civil "Prof. Gustavo Martínez Campos"</strong>
-                    <span>UEGP N.º 172 "Deolindo Bittel"</span>
-                </div>
+        <header class="uegp-header" id="top">
+            <a class="uegp-brand" href="index.html" aria-label="U.E.G.P. N.º 172, inicio">
+                <img src="ASSETS/img/logo-institucional-circular.png" alt="Emblema circular institucional">
+                <span class="uegp-brand-copy">
+                    <strong>U.E.G.P. N.º 172</strong>
+                    <span>Deolindo Felipe Bittel</span>
+                    <small>Asociación Civil Prof. Gustavo Martínez Campos</small>
+                </span>
             </a>
-
-            <nav class="menu" aria-label="Navegación principal">
-                <a href="#institucion">Institución</a>
-                <a href="#propuestas" class="activo">Propuestas</a>
-                <a href="#sedes">Sedes</a>
+            <nav class="uegp-menu" aria-label="Navegación principal">
+                <a class="active" href="index.html#top">Inicio</a>
+                <a href="index.html#institucion">Institucional</a>
+                <a href="inscripciones.html">Inscripciones</a>
+                <a href="index.html#contacto">Contacto</a>
             </nav>
-
-            <a class="boton-menu" href="#contacto" aria-label="Ir a contacto">
-                <span aria-hidden="true">⌕</span>
-            </a>
-
         </header>
 
         <!-- PORTADA PRINCIPAL -->
@@ -77,7 +68,7 @@
                     y construir un futuro mejor.
                 </p>
 
-                <a href="./contacto.html" class="boton boton-claro">
+                <a href="#contacto" class="boton boton-claro">
                     Contactanos <span aria-hidden="true">→</span>
                 </a>
 
@@ -94,7 +85,7 @@
 <!-- TARJETAS DE ACCESO -->
 <section class="tarjetas-acceso" id="propuestas">
 
-    <a href="#nivel-superior" class="tarjeta tarjeta-turquesa">
+    <a id="terciario" href="#nivel-superior" class="tarjeta tarjeta-turquesa">
         <div class="tarjeta-foto">
             <img
                 src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=85"
@@ -112,7 +103,7 @@
         </div>
     </a>
 
-    <a href="#formacion" class="tarjeta tarjeta-azul">
+    <a id="cursos-oficios" href="#formacion" class="tarjeta tarjeta-azul">
         <div class="tarjeta-foto">
             <img
                 src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=900&q=85"
@@ -129,7 +120,7 @@
         </div>
     </a>
 
-    <a href="#bla" class="tarjeta tarjeta-verde">
+    <a id="bachillerato" href="#bla" class="tarjeta tarjeta-verde">
         <div class="tarjeta-foto">
             <img
                 src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=85"
@@ -268,9 +259,9 @@
                     <b>↗</b>
                 </a>
 
-                <a href="#contacto" class="recurso">
+                <a href="inscripciones.html" class="recurso">
                     <span>＋</span>
-                    <h3>Ingresantes</h3>
+                    <h3>Inscripciones</h3>
                     <p>Requisitos e inscripción.</p>
                     <b>↗</b>
                 </a>

@@ -1,0 +1,17 @@
+/* Encabezado institucional unificado U.E.G.P. N.º 172 */
+.uegp-header{position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;gap:clamp(16px,2vw,30px);min-height:94px;padding:10px clamp(18px,3vw,52px);color:#fff;background:linear-gradient(112deg,#06284b 0%,#073d70 52%,#05264a 100%);z-index:20}
+.uegp-header::before,.uegp-header::after{content:"";position:absolute;z-index:-1;pointer-events:none;border:2px solid rgba(24,123,232,.55);border-radius:50%;transform:rotate(-18deg)}
+.uegp-header::before{width:390px;height:190px;left:-180px;top:-115px;box-shadow:0 0 0 12px rgba(20,103,205,.16),0 0 0 25px rgba(20,103,205,.11),0 0 0 39px rgba(20,103,205,.08)}
+.uegp-header::after{width:430px;height:220px;right:-210px;bottom:-160px;box-shadow:0 0 0 12px rgba(20,103,205,.16),0 0 0 25px rgba(20,103,205,.11),0 0 0 39px rgba(20,103,205,.08)}
+.uegp-brand{position:relative;z-index:1;display:flex;align-items:center;gap:12px;flex:0 0 auto;min-width:0;color:#fff;text-decoration:none}
+.uegp-brand img{width:52px;height:52px;flex:0 0 52px;display:block;object-fit:cover;border-radius:50%;border:2px solid rgba(255,255,255,.92);background:#fff;box-shadow:0 3px 12px rgba(0,0,0,.2)}
+.uegp-brand-copy{display:flex;flex-direction:column;line-height:1.2;white-space:nowrap}
+.uegp-brand-copy strong{font-family:Montserrat,Arial,sans-serif;font-size:clamp(14px,1.45vw,22px);font-weight:800;letter-spacing:.15px;color:#fff}
+.uegp-brand-copy span{font-size:clamp(10px,.85vw,12px);font-weight:600;margin-top:3px;color:#f2f7ff;text-transform:uppercase}
+.uegp-brand-copy small{font-size:10px;color:#cbdcf0;margin-top:4px}
+.uegp-menu{position:relative;z-index:1;display:flex;align-items:stretch;justify-content:flex-end;gap:clamp(4px,.55vw,10px);margin-left:auto;min-width:0}
+.uegp-menu a{display:flex;align-items:center;justify-content:center;min-height:54px;padding:0 8px;border-bottom:3px solid transparent;color:#f5f8fd;text-decoration:none;text-transform:uppercase;white-space:nowrap;font:700 clamp(9px,.72vw,12px)/1.2 Montserrat,Arial,sans-serif;letter-spacing:.25px;transition:background .2s,color .2s,border-color .2s}
+.uegp-menu a:hover,.uegp-menu a.active{color:#fff;border-bottom-color:#19d0f2;background:rgba(18,120,210,.16)}
+.uegp-menu a.active{box-shadow:inset 0 -1px 0 rgba(25,208,242,.12)}
+@media(max-width:1050px){.uegp-header{flex-wrap:wrap;gap:8px 18px;padding:10px 20px}.uegp-brand img{width:48px;height:48px;flex-basis:48px}.uegp-menu{width:100%;justify-content:space-between;gap:3px;overflow-x:auto;margin:0}.uegp-menu a{min-height:38px;padding:0 7px;font-size:11px}}
+@media(max-width:600px){.uegp-header{padding:9px 13px}.uegp-brand{gap:9px}.uegp-brand img{width:42px;height:42px;flex-basis:42px}.uegp-brand-copy strong{font-size:14px}.uegp-brand-copy span{font-size:9px}.uegp-brand-copy small{font-size:8px}.uegp-menu{justify-content:flex-start;scrollbar-width:thin}.uegp-menu a{font-size:10px;min-height:36px;padding:0 9px}}
