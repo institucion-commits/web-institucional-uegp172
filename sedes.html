@@ -84,14 +84,38 @@ a{color:inherit;text-decoration:none}
 h1{font-family:"Playfair Display",serif;font-size:clamp(48px,6.2vw,88px);line-height:.99;letter-spacing:-1.5px;margin-bottom:18px;font-weight:600}
 .hero p{font-size:clamp(15px,1.5vw,20px);line-height:1.4;max-width:510px;color:#eef5fc}
 .overlap{position:relative;z-index:2;margin-top:-86px}
-.feature-grid{display:grid;grid-template-columns:minmax(330px,.78fr) minmax(0,1.22fr);gap:16px;align-items:stretch}
+.feature-grid {
+    display: grid;
+    grid-template-columns: minmax(330px, .78fr) minmax(0, 1.22fr);
+    gap: 16px;
+    align-items: stretch;
+}
+
+.feature-grid .intro-card {
+    height: auto;
+    min-height: 300px;
+}
+
+.feature-grid .map-card {
+    height: 100%;
+    min-height: 300px;
+}
 .intro-card{min-height:300px;padding:32px 38px;background:linear-gradient(140deg,#07386d,#05294f);color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:20px;position:relative;overflow:hidden}
 .intro-card:after{content:"";position:absolute;width:230px;height:230px;border:1px solid rgba(255,255,255,.08);border-radius:50%;right:-100px;top:-100px;box-shadow:0 0 0 24px rgba(255,255,255,.025),0 0 0 50px rgba(255,255,255,.02)}
 .pin-icon{width:58px;height:58px;border:1.5px solid #9de7e7;border-radius:50%;display:grid;place-items:center;font-size:31px;color:#b7ffff;margin-bottom:18px;position:relative;z-index:1}
 .intro-card h2{font-size:25px;line-height:1.2;margin-bottom:17px;font-weight:700;position:relative;z-index:1}
 .underline{width:50px;height:3px;background:#78d8df;margin-bottom:21px}
 .intro-card p{font-size:14px;line-height:1.65;color:#e2edf8;max-width:440px;margin-bottom:15px;position:relative;z-index:1}
-.map-card{height:300px;background:#dfeaf1;border:1px solid rgba(255,255,255,.7);border-radius:20px;overflow:hidden;box-shadow:0 12px 30px rgba(9,44,81,.08);position:relative}
+.map-card {
+    height: 100%;
+    min-height: 300px;
+    background: #dfeaf1;
+    border: 1px solid rgba(255,255,255,.7);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(9,44,81,.08);
+    position: relative;
+}
 #map{height:100%;width:100%;background:#e6eef0}
 .map-note{position:absolute;left:14px;bottom:14px;z-index:500;background:rgba(255,255,255,.95);padding:7px 11px;border-radius:7px;font-size:10px;font-weight:700;box-shadow:0 2px 10px #0c31551a}
 .leaflet-popup-content-wrapper{border-radius:10px}.leaflet-popup-content{font-family:"DM Sans",sans-serif;font-size:12px;line-height:1.55}.leaflet-popup-content b{color:#0a376b;font-size:13px}
@@ -116,6 +140,13 @@ h1{font-family:"Playfair Display",serif;font-size:clamp(48px,6.2vw,88px);line-he
 .kicker{color:#268d88;font-size:10px;letter-spacing:2px;font-weight:800;text-transform:uppercase;margin-bottom:8px}
 .section-head h2{font-family:"Playfair Display",serif;color:#082f5c;font-size:clamp(30px,4vw,43px);line-height:1.1}
 .section-head p{max-width:470px;color:var(--muted);font-size:13px}
+.directory-intro {
+    width: 100%;
+    margin: 0 0 20px;
+    color: #687b90;
+    font-size: 13px;
+    line-height: 1.6;
+}
 .filters{display:grid;grid-template-columns:minmax(220px,1fr) minmax(190px,260px);gap:12px;margin-bottom:20px}
 .filters input,.filters select{width:100%;border:1px solid #d8e2ec;background:#fff;border-radius:9px;padding:13px 15px;font:inherit;font-size:13px;color:#173a60;outline:none}
 .filters input:focus,.filters select:focus{border-color:#278f99;box-shadow:0 0 0 3px #278f991c}
@@ -139,7 +170,21 @@ h1{font-family:"Playfair Display",serif;font-size:clamp(48px,6.2vw,88px);line-he
 .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px}
 .footer strong{font-size:12px}.footer p{font-size:11px;color:#d3e0ef;margin-top:4px}.footer a{font-size:11px;font-weight:700}
 @media(max-width:1100px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.directory-list{grid-template-columns:repeat(2,minmax(0,1fr))}.feature-grid{grid-template-columns:.8fr 1.2fr}.intro-card{padding:28px}.hero{height:365px}}
-@media(max-width:760px){.topbar{height:auto;min-height:76px;padding:15px 0}.nav{align-items:flex-start;flex-direction:column;gap:13px}.navlinks{gap:16px;flex-wrap:wrap}.hero{height:360px;background-position:58% center}.hero-inner{padding-top:38px}.overlap{margin-top:-48px}.feature-grid{grid-template-columns:1fr}.intro-card{min-height:auto;padding:27px 26px}.map-card{height:330px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.site-card{min-height:0;padding:10px}.site-photo{height:165px;min-height:0}.site-card h3{font-size:17px}.section-head{align-items:flex-start;flex-direction:column}.directory{padding-top:55px}.directory-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
+@media(max-width:760px){.topbar{height:auto;min-height:76px;padding:15px 0}.nav{align-items:flex-start;flex-direction:column;gap:13px}.navlinks{gap:16px;flex-wrap:wrap}.hero{height:360px;background-position:58% center}.hero-inner{padding-top:38px}.overlap{margin-top:-48px}.feature-grid {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: stretch;
+}
+
+.feature-grid .intro-card {
+    height: auto;
+}
+
+.feature-grid .map-card {
+    display: block;
+    width: 100%;
+    height: 330px;
+    min-height: 330px;
+}.intro-card{min-height:auto;padding:27px 26px}.map-card{height:330px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.site-card{min-height:0;padding:10px}.site-photo{height:165px;min-height:0}.site-card h3{font-size:17px}.section-head{align-items:flex-start;flex-direction:column}.directory{padding-top:55px}.directory-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
 @media(max-width:500px){.wrap{width:91%}.brand{font-size:11px}.brand small{font-size:10px}.navlinks{gap:13px;font-size:11px}.navlinks .contact{padding:9px 12px}.hero{height:345px}.eyebrow{font-size:9px;letter-spacing:2px;gap:10px;margin-bottom:23px}.eyebrow:before{width:28px}h1{font-size:47px;max-width:350px}.hero p{font-size:14px;max-width:330px}.intro-card h2{font-size:23px}.intro-card p{font-size:13px}.map-card{height:290px}.cards{grid-template-columns:1fr;gap:12px}.directory-list{grid-template-columns:1fr;gap:13px}.site-photo{height:200px}.site-card h3{font-size:18px}.site-type{font-size:9px}.details{font-size:10px}.filters{grid-template-columns:1fr}.footer-inner{align-items:flex-start;flex-direction:column}}
 
 .map-legend {
@@ -173,6 +218,160 @@ h1{font-family:"Playfair Display",serif;font-size:clamp(48px,6.2vw,88px);line-he
   flex-shrink: 0;
 }
 
+
+/* DIRECTORIO DESPLEGABLE POR MODALIDAD */
+.directory {
+  padding: 55px 0 75px;
+}
+
+.directory-accordions {
+  display: grid;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.directory-group {
+  --level-color: #1976d2;
+  background: #fff;
+  border: 1px solid color-mix(in srgb, var(--level-color) 25%, white);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(10, 48, 86, 0.05);
+}
+
+.directory-group summary {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 20px;
+  cursor: pointer;
+  list-style: none;
+  background: color-mix(in srgb, var(--level-color) 9%, white);
+  color: #082f5c;
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.directory-group summary::-webkit-details-marker {
+  display: none;
+}
+
+.directory-group summary::after {
+  content: "+";
+  margin-left: auto;
+  color: var(--level-color);
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.directory-group[open] summary::after {
+  content: "−";
+}
+
+.directory-icon {
+    display: inline-block;
+    flex: 0 0 11px;
+    width: 11px;
+    height: 11px;
+    min-width: 11px;
+    border-radius: 50%;
+    background: var(--level-color);
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+}
+
+.directory-group-content {
+  padding: 18px;
+  border-top: 1px solid #edf1f6;
+}
+
+.directory-description {
+  margin: 0 0 16px;
+  color: #60758e;
+  font-size: 13px;
+}
+
+.directory-group-content .directory-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.directory-group-content .site-card {
+  border-top: 3px solid var(--level-color);
+}
+
+.directory-group[data-level="BLA"] {
+  --level-color: #e53935;
+}
+
+.directory-group[data-level="Nivel superior"] {
+  --level-color: #1976d2;
+}
+
+.directory-group[data-level="Secundaria Técnica"] {
+  --level-color: #8e44ad;
+}
+
+.directory-group[data-level="Oficina administrativa"] {
+  --level-color: #424242;
+}
+
+.directory-group[data-level="EPA"] {
+  --level-color: #16866b;
+}
+
+.directory-group[data-level="Cursos de Formación"] {
+  --level-color: #fbc02d;
+}
+
+.directory-group[data-level="Cursos de Formación"] .directory-icon {
+  color: #172d48;
+}
+
+.directory-empty {
+  color: #687b90;
+  font-size: 13px;
+  padding: 12px 0;
+}
+
+@media (max-width: 900px) {
+  .directory-group-content .directory-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .directory {
+    padding-top: 38px;
+  }
+
+  .directory-group summary {
+    padding: 13px;
+    gap: 11px;
+    font-size: 14px;
+  }
+
+  .directory-icon {
+    flex-basis: 11px;
+    width: 11px;
+    height: 11px;
+    min-width: 11px;
+    border-radius: 50%;
+    font-size: 0;
+}
+
+  .directory-group-content {
+    padding: 12px;
+  }
+
+  .directory-group-content .directory-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -198,11 +397,10 @@ h1{font-family:"Playfair Display",serif;font-size:clamp(48px,6.2vw,88px);line-he
   <section class="overlap wrap" aria-label="Presentación y mapa de sedes">
     <div class="feature-grid">
       <div class="intro-card">
-        <div class="pin-icon" aria-hidden="true">♧</div>
-        <h2>Conocé nuestras sedes</h2>
+        <h2>Ubica tu sede más cercana</h2>
         <div class="underline"></div>
-        <p>La UEGP N.º 172 “Deolindo Bittel” desarrolla sus propuestas en una sede administrativa y en diferentes anexos donde se dictan carreras y cursos.</p>
-        <p>Seleccioná una sede en el mapa o en las tarjetas para ver más información.</p>
+        <p>La UEGP Nº 172 “Deolindo Bittel” desarrolla sus propuestas en diferentes anexos donde se dictan carreras, cursos de formación profesional y secundario para adultos.</p>
+        <p>Elegí estudiar cerca de casa para optimizar tus tiempos.</p>
       </div>
       <div class="map-card">
         <div id="map" role="application" aria-label="Mapa interactivo de sedes"></div>
@@ -220,27 +418,38 @@ h1{font-family:"Playfair Display",serif;font-size:clamp(48px,6.2vw,88px);line-he
 
   </section>
 
-  <section class="directory">
-    <div class="wrap">
-      <div class="section-head">
-        <div><div class="kicker">Directorio institucional</div><h2>Encontrá tu sede</h2></div>
-        <p>Consultá las sedes y anexos incluidos en la planilla institucional. Los datos se muestran según la información disponible.</p>
-      </div>
-      <div class="filters">
-        <input type="search" id="search" placeholder="Buscar sede, domicilio o responsable..." aria-label="Buscar sede">
-        <select id="filter-level" aria-label="Filtrar por nivel">
-          <option value="">Todos los niveles</option>
-        </select>
-      </div>
-      <div class="count" id="count"></div>
-      <div class="directory-list" id="directory-list"></div>
+  
+<section class="directory" id="directorio-sedes">
+  <div class="wrap">
+    <div class="section-head">
+    <div>
+        <div class="kicker">Directorio institucional</div>
+        <h2>Encontrá tu sede</h2>
     </div>
-  </section>
+</div>
+
+<p class="directory-intro">
+    Seleccioná el nivel o la modalidad que te interesa para consultar sus sedes, domicilios y ubicaciones.
+</p>
+
+    <div class="filters">
+      <input
+        type="search"
+        id="search"
+        placeholder="Buscar sede, domicilio o responsable..."
+        aria-label="Buscar sede"
+      >
+    </div>
+
+    <div id="directory-count" class="count" aria-live="polite"></div>
+    <div id="directory-accordions" class="directory-accordions"></div>
+  </div>
+</section>
 </main>
 
 <footer class="footer">
   <div class="footer-inner wrap">
-    <div><strong>UEGP N.º 172 “Deolindo Bittel”</strong><p>Asociación Civil Prof. Gustavo Martínez Campos · CHACO</p></div>
+    <div><strong>Asociación Civil Prof. Gustavo Martínez Campos</strong><p>UEGP Nº 172 “Deolindo Bittel” · CHACO</p></div>
     <a href="index.html">← Volver al inicio</a>
   </div>
 </footer>
@@ -289,27 +498,118 @@ function cardHtml(s, i) {
     </div>
   </article>`;
 }
-const levelSelect = document.getElementById("filter-level");
-[...new Set(sedes.map(s => clean(s.nivel)).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"es")).forEach(level => {
-  const option = document.createElement("option");
-  option.value = level;
-  option.textContent = level;
-  levelSelect.appendChild(option);
-});
-function renderDirectory() {
-  const query = clean(document.getElementById("search").value).toLocaleLowerCase("es");
-  const level = levelSelect.value;
-  const matches = sedes.filter(s => {
-    const text = [s.nivel,s.nombre,s.domicilio,s.horario,s.responsable,s.carreras].join(" ").toLocaleLowerCase("es");
-    return (!query || text.includes(query)) && (!level || clean(s.nivel) === level);
-  });
-  document.getElementById("count").textContent = `${matches.length} registros encontrados`;
-  document.getElementById("directory-list").innerHTML = matches.map(s => {
-    return cardHtml(s, sedes.indexOf(s));
-  }).join("") || `<p>No encontramos sedes con esos datos.</p>`;
+
+const directoryCategories = [
+  {
+    name: "Cursos de Formación",
+    icon: "▤",
+    description: "Conocé las sedes donde se dictan nuestros cursos de formación profesional."
+  },
+  {
+    name: "BLA",
+    icon: "♟",
+    description: "Encontrá las sedes del Bachillerato Libre para Adultos."
+  },
+  {
+    name: "Secundaria Técnica",
+    icon: "⚙",
+    description: "Consultá las sedes y los espacios de nuestra propuesta de educación secundaria técnica."
+  },
+  {
+    name: "EPA",
+    icon: "▣",
+    description: "Encontrá las sedes de Educación Primaria para Adultos."
+  },
+  {
+    name: "Nivel superior",
+    icon: "◆",
+    description: "Sedes donde se dictan los profesorados y las tecnicaturas del Nivel Superior."
+  },
+  {
+    name: "Oficina administrativa",
+    icon: "⌂",
+    description: "Consultá la sede administrativa de la institución."
+  }
+];
+
+function categoryMatches(sede, category) {
+  const nivel = clean(sede.nivel).toLocaleLowerCase("es");
+
+  if (category === "Nivel superior") {
+    return nivel.includes("superior") || nivel.includes("terciario");
+  }
+
+  return nivel === category.toLocaleLowerCase("es");
 }
-document.getElementById("search").addEventListener("input", renderDirectory);
-levelSelect.addEventListener("change", renderDirectory);
+
+function renderDirectory() {
+  const searchInput = document.getElementById("search");
+  const query = clean(searchInput.value).toLocaleLowerCase("es");
+  const container = document.getElementById("directory-accordions");
+  const count = document.getElementById("directory-count");
+
+  let total = 0;
+
+  container.innerHTML = directoryCategories.map((category, index) => {
+    const matches = sedes.filter(sede => {
+      const text = [
+        sede.nivel,
+        sede.nombre,
+        sede.domicilio,
+        sede.horario,
+        sede.responsable,
+        sede.carreras
+      ].join(" ").toLocaleLowerCase("es");
+
+      return categoryMatches(sede, category.name) &&
+        (!query || text.includes(query));
+    });
+
+    total += matches.length;
+
+    const cards = matches.map(sede =>
+      cardHtml(sede, sedes.indexOf(sede))
+    ).join("");
+
+    const isOpen = query.length > 0 && matches.length > 0;
+
+    return `
+      <details
+        class="directory-group"
+        data-level="${esc(category.name)}"
+        ${isOpen ? "open" : ""}
+      >
+        <summary>
+          <span class="directory-icon" aria-hidden="true">
+            ${category.icon}
+          </span>
+          <span>${esc(category.name === "BLA"
+            ? "Bachillerato Libre para Adultos (BLA)"
+            : category.name)}</span>
+        </summary>
+
+        <div class="directory-group-content">
+          <p class="directory-description">
+            ${esc(category.description)}
+          </p>
+
+          ${matches.length
+            ? `<div class="directory-list">${cards}</div>`
+            : `<p class="directory-empty">
+                 No hay sedes que coincidan con esta búsqueda.
+               </p>`
+          }
+        </div>
+      </details>
+    `;
+  }).join("");
+
+  count.textContent = `${total} sedes encontradas`;
+}
+
+document.getElementById("search")
+  .addEventListener("input", renderDirectory);
+
 renderDirectory();
 
 
