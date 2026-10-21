@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="CSS/header.css">
 <style>
 :root{--navy:#073366;--navy-deep:#06264c;--blue:#0d3d73;--teal:#39b7bd;--green:#2b9a8e;--ink:#123254;--muted:#687b90;--paper:#f4f7fb;--white:#fff}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -376,13 +377,19 @@ h1{font-family:"Playfair Display",serif;font-size:clamp(48px,6.2vw,88px);line-he
 </head>
 <body>
 
-<header class="topbar">
-  <div class="wrap">
-    <a href="index.html" class="volver-inicio">
-      <span aria-hidden="true">←</span>
-      Volver al inicio
-    </a>
-  </div>
+<header class="uegp-header" id="top">
+  <a class="uegp-brand" href="index.html" aria-label="U.E.G.P. N.º 172, inicio">
+    <img src="ASSETS/img/logo-institucional-circular.png" alt="Emblema circular institucional">
+    <span class="uegp-brand-copy">
+      <strong>Asociación Civil Prof. Gustavo Martínez Campos</strong><span>U.E.G.P. 172 - DEOLINDO BITTEL</span>
+    </span>
+  </a>
+  <nav class="uegp-menu" aria-label="Navegación principal">
+    <a href="index.html#top">Inicio</a>
+    <a href="index.html#institucion">Institucional</a>
+    <a href="inscripciones.html">Inscripciones</a>
+    <a href="index.html#contacto">Contacto</a>
+  </nav>
 </header>
 
 <main>
