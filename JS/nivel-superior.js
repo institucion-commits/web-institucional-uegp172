@@ -7,24 +7,17 @@
   const filters = document.getElementById('career-filters');
   let activeCategory = 'all';
 
-  // Fotos ilustrativas por carrera. Si una URL externa falla, se oculta la imagen rota y queda un fondo azul institucional.
-  const photos = [
-    'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80',
-    'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=80',
-    'https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&w=900&q=80',
-    'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80',
-    'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80',
-    'https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=900&q=80',
-    'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80',
-    'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=900&q=80',
-    'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80',
-    'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80',
-    'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80',
-    'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80',
-    'https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=900&q=80',
-    'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80',
-    'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=900&q=80'
-  ];
+  // Imágenes locales específicas para cada una de las ocho carreras aprobadas.
+  const photos = {
+    'carrera-02': 'ASSETS/img/carreras/electromecanica.webp',
+    'carrera-03': 'ASSETS/img/carreras/construccion-obras-civiles.webp',
+    'carrera-05': 'ASSETS/img/carreras/enfermeria.webp',
+    'carrera-06': 'ASSETS/img/carreras/auxiliar-docente.webp',
+    'carrera-10': 'ASSETS/img/carreras/educacion-primaria.webp',
+    'carrera-11': 'ASSETS/img/carreras/seguridad-higiene.webp',
+    'carrera-12': 'ASSETS/img/carreras/recursos-humanos.webp',
+    'carrera-13': 'ASSETS/img/carreras/marketing-publicidad.webp'
+  };
   const categories = {
     'carrera-01': ['construccion'],
     'carrera-02': ['construccion', 'electricidad', 'servicios'],
@@ -51,8 +44,7 @@
       return matchesText && matchesCategory;
     });
     grid.innerHTML = filtered.map(c => {
-      const i = window.CARRERAS.findIndex(x => x.id === c.id);
-      return `<a class="career-card" href="carrera.html?id=${encodeURIComponent(c.id)}"><div class="card-image"><img src="${photos[i % photos.length]}" alt="Fotografía ilustrativa de ${c.title}" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('image-fallback')"><span class="duration-tag">${c.duration}</span></div><div class="card-body"><span class="card-kicker">TECNICATURA / PROFESORADO</span><h3>${c.title}</h3><span class="card-link">Ver plan de estudios <b>↗</b></span></div></a>`;
+      return `<a class="career-card" href="carrera.html?id=${encodeURIComponent(c.id)}"><div class="card-image"><img src="${photos[c.id] || ''}" alt="Fotografía ilustrativa de ${c.title}" loading="lazy" onerror="this.parentElement.classList.add('image-fallback');this.remove()"><span class="duration-tag">${c.duration}</span></div><div class="card-body"><span class="card-kicker">TECNICATURA / PROFESORADO</span><h3>${c.title}</h3><span class="card-link">Ver plan de estudios <b>↗</b></span></div></a>`;
     }).join('');
     count.textContent = `${filtered.length} ${filtered.length === 1 ? 'carrera' : 'carreras'}`;
     empty.hidden = filtered.length > 0;
